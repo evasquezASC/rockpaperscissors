@@ -5,12 +5,26 @@
 //GLOBAL VARIABLES
 /* global $ */
 
-let computerChoices = ['rock', 'paper', 'scissors'];
+
 
 // DOCUMENT READY FUNCTION BELOW
 $("#shoot").click(function() {
+
     let userChoice = $("#input").val();
         $("#userChoice").text(userChoice.toLowerCase());
-    //let computerChoice = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+    
 });
+
+function computerChoice() {
+    let cChoice = Math.random();
+
+    console.log(cChoice);
+    if (cChoice <= .33) {
+        $("#computerChoice").text('rock');
+    } else if (cChoice > .34 && cChoice <= .66) {
+        $("#computerChoice").text('paper');
+    } else if (cChoice > .66 ) {
+
+    }
+}
 

@@ -9,10 +9,12 @@
 
 // DOCUMENT READY FUNCTION BELOW
 $("#shoot").click(function() {
-
-    let userChoice = $("#input").val();
-        $("#userChoice").text(userChoice.toLowerCase());
     
+    let userChoice = $("#input").val();
+    $("#userChoice").text(userChoice.toLowerCase());
+    
+    computerChoice();
+    choosingTheWinner();
 });
 
 function computerChoice() {
@@ -24,7 +26,14 @@ function computerChoice() {
     } else if (cChoice > .34 && cChoice <= .66) {
         $("#computerChoice").text('paper');
     } else if (cChoice > .66 ) {
-
+        $("#computerChoice").text('scissors');
+    } else {
+        $("#computerChoice").text("Error! Try again!")
     }
 }
 
+/*function choosingTheWinner() {
+    if (userChoice === cChoice ) {
+        $("#result").text("Nobody wins!")
+    }
+};*/

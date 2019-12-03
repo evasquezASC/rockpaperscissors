@@ -13,27 +13,33 @@ $("#shoot").click(function() {
     let userChoice = $("#input").val();
     $("#userChoice").text(userChoice.toLowerCase());
     
-    computerChoice();
-    choosingTheWinner();
+    let computerResult = computerChoice();
+    
+    if (userChoice === computerResult) {
+        $("#result").text("Nobody wins!")
+    }
+
+    console.log(computerResult,userChoice);
 });
 
 function computerChoice() {
     let cChoice = Math.random();
+    let rock = 'rock';
+    let paper = 'paper';
+    let scissors = 'scissors';
 
     console.log(cChoice);
     if (cChoice <= .33) {
-        $("#computerChoice").text('rock');
+        $("#computerChoice").text(rock);
+        return rock
     } else if (cChoice > .34 && cChoice <= .66) {
-        $("#computerChoice").text('paper');
+        $("#computerChoice").text(paper);
+        return paper;
     } else if (cChoice > .66 ) {
-        $("#computerChoice").text('scissors');
+        $("#computerChoice").text(scissors);
+        return scissors;
     } else {
         $("#computerChoice").text("Error! Try again!")
     }
 }
 
-/*function choosingTheWinner() {
-    if (userChoice === cChoice ) {
-        $("#result").text("Nobody wins!")
-    }
-};*/

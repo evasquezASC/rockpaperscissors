@@ -17,6 +17,14 @@ $("#shoot").click(function() {
     
     if (userChoice === computerResult) {
         $("#result").text("Nobody wins!")
+    } else if (userChoice === "rock" && computerResult === "paper" 
+            || userChoice === "paper" && computerResult === "scissors"
+            || userChoice === "scissors" && computerResult === "rock") {
+        $("#result").text("Too bad! Computer wins!")
+    } else if (userChoice === "rock" && computerResult === "scissors" 
+            || userChoice === "paper" && computerResult === "rock" 
+            || userChoice === "scissors" && computerResult === "paper") {
+        $("#result").text("Congratulations you have won!")
     }
 
     console.log(computerResult,userChoice);

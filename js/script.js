@@ -25,6 +25,8 @@ $("#shoot").click(function() {
             || userChoice === "paper" && computerResult === "rock" 
             || userChoice === "scissors" && computerResult === "paper") {
         $("#result").text("Congratulations you have won!")
+    } else {
+        $("#result").text("Error! Choose rock, paper, or scissors!")
     }
 
     console.log(computerResult,userChoice);
